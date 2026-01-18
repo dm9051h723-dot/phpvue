@@ -10,11 +10,19 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler', // or "modern"
+        silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions', 'mixed-decls']
+      }
+    }
+  },
   server: {
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:8081', // Backend URL
+        target: 'http://localhost:8081',
         changeOrigin: true,
       },
       '/broadcasting': {
