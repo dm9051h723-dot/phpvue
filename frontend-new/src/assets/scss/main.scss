@@ -1,0 +1,193 @@
+// Import Bootstrap SCSS
+@import "bootstrap/scss/bootstrap";
+// Import Font Awesome
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+// AdminLTE-like basic styles
+body {
+    background-color: #f4f6f9;
+    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.main-header {
+    background-color: #3c8dbc;
+    color: white;
+    max-height: 100px;
+
+    .logo {
+        display: block;
+        float: left;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        width: 230px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        padding: 0 15px;
+        font-weight: 300;
+        overflow: hidden;
+        color: white;
+        background-color: #367fa9;
+        text-decoration: none;
+    }
+
+    .navbar {
+        background-color: #3c8dbc;
+        margin-left: 230px;
+        border: none;
+        min-height: 50px;
+        border-radius: 0;
+    }
+}
+
+.main-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    min-height: 100%;
+    width: 230px;
+    z-index: 810;
+    transition: transform .3s ease-in-out,width .3s ease-in-out;
+    background-color: #222d32;
+
+    .sidebar-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        > li {
+            position: relative;
+            margin: 0;
+            padding: 0;
+
+            > a {
+                padding: 12px 5px 12px 15px;
+                display: block;
+                color: #b8c7ce;
+                border-left: 3px solid transparent;
+                text-decoration: none;
+
+                &:hover {
+                    color: #fff;
+                    background: #1e282c;
+                }
+
+                i {
+                    width: 20px;
+                }
+            }
+
+            &.active > a {
+                color: #fff;
+                background: #1e282c;
+                border-left-color: #3c8dbc;
+            }
+
+            .treeview-menu {
+                display: none;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                padding-left: 5px;
+                background: #2c3b41;
+
+                > li > a {
+                    color: #8aa4af;
+                    padding: 5px 5px 5px 15px;
+                    display: block;
+                    font-size: 14px;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+
+            &.menu-open > .treeview-menu {
+                display: block;
+            }
+        }
+
+        .header {
+            color: #4b646f;
+            background: #1a2226;
+            padding: 10px 25px 10px 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.content-wrapper {
+    min-height: calc(100vh - 50px);
+    background-color: #ecf0f5;
+    z-index: 800;
+    margin-left: 230px;
+    transition: transform .3s ease-in-out,margin-left .3s ease-in-out;
+    padding: 15px;
+}
+
+.content-header {
+    position: relative;
+    padding: 15px 15px 0 15px;
+
+    h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+}
+
+.content {
+    min-height: 250px;
+    padding: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+
+    &.box-primary {
+        border-top-color: #3c8dbc;
+    }
+
+    .box-header {
+        color: #444;
+        display: block;
+        padding: 10px;
+        position: relative;
+
+        .box-title {
+            display: inline-block;
+            font-size: 18px;
+            margin: 0;
+            line-height: 1;
+        }
+    }
+
+    .box-body {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        padding: 10px;
+    }
+}
+
+/* Utilities */
+.pull-right { float: right !important; }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
