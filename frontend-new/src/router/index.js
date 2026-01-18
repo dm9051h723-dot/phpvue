@@ -7,6 +7,8 @@ import VehicleMgmtListPage from '../views/VehicleMgmt/VehicleMgmtListPage.vue'
 import ProjectListPage from '../views/Project/ProjectListPage.vue'
 import EventListPage from '../views/Event/EventListPage.vue'
 import ParkingLotMgmtListPage from '../views/ParkingLotMgmt/ParkingLotMgmtListPage.vue'
+import ObjectMgmtListPage from '../views/ObjectMgmt/ObjectMgmtListPage.vue'
+import ScheduledMissionListPage from '../views/ScheduledMission/ScheduledMissionListPage.vue'
 import MirStatusListPage from '../views/MirStatus/MirStatusListPage.vue'
 import MissionListPage from '../views/Mission/MissionListPage.vue'
 import MissionQueueListPage from '../views/MissionQueue/MissionQueueListPage.vue'
@@ -36,6 +38,8 @@ const routes = [
       { path: 'projects', component: ProjectListPage },
       { path: 'events', component: EventListPage },
       { path: 'parkingLotMgmts', component: ParkingLotMgmtListPage },
+      { path: 'objectMgmts', component: ObjectMgmtListPage },
+      { path: 'scheduledMissions', component: ScheduledMissionListPage },
       { path: 'mirStatuses', component: MirStatusListPage },
       { path: 'missions', component: MissionListPage },
       { path: 'missionQueues/current', component: MissionQueueListPage },
@@ -53,8 +57,6 @@ const routes = [
       { path: 'regionMgmts', component: UnderConstruction },
       { path: 'floorRegionMgmts/:id', component: RegionMgmtPage },
       { path: 'regionMgmts/:id', component: RegionMgmtPage },
-      { path: 'objectMgmts', component: UnderConstruction },
-      { path: 'scheduledMissions', component: UnderConstruction },
       { path: 'missionQueues/sample', component: UnderConstruction },
 
       // Window popups
