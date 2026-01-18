@@ -3,6 +3,21 @@ import AppLayout from '../components/Layouts/AppLayout.vue'
 import LoginPage from '../views/User/LoginPage.vue'
 import UserListPage from '../views/User/UserListPage.vue'
 import RegionMgmtPage from '../views/RegionMgmt/RegionMgmtPage.vue'
+import VehicleMgmtListPage from '../views/VehicleMgmt/VehicleMgmtListPage.vue'
+import ProjectListPage from '../views/Project/ProjectListPage.vue'
+import EventListPage from '../views/Event/EventListPage.vue'
+import ParkingLotMgmtListPage from '../views/ParkingLotMgmt/ParkingLotMgmtListPage.vue'
+import MirStatusListPage from '../views/MirStatus/MirStatusListPage.vue'
+import MissionListPage from '../views/Mission/MissionListPage.vue'
+import MissionQueueListPage from '../views/MissionQueue/MissionQueueListPage.vue'
+import MapListPage from '../views/Map/MapListPage.vue'
+import DeviceListPage from '../views/Device/DeviceListPage.vue'
+import HookStatusListPage from '../views/HookStatus/HookStatusListPage.vue'
+import DashboardListPage from '../views/Dashboard/DashboardListPage.vue'
+import MicroOrganismListPage from '../views/MicroOrganism/MicroOrganismListPage.vue'
+import AcceptanceGradeListPage from '../views/AcceptanceGrade/AcceptanceGradeListPage.vue'
+import RemoteManagementSystemStatusListPage from '../views/RemoteManagementSystemStatus/RemoteManagementSystemStatusListPage.vue'
+import MissionBookingListPage from '../views/MissionBooking/MissionBookingListPage.vue'
 import UnderConstruction from '../views/Common/UnderConstruction.vue'
 
 const routes = [
@@ -15,36 +30,36 @@ const routes = [
     path: '/',
     component: AppLayout,
     children: [
-      { path: '', redirect: '/users' }, // Default redirect
+      { path: '', redirect: '/users' },
       { path: 'users', component: UserListPage },
-      { path: 'vehicleMgmts', component: UnderConstruction },
-      { path: 'objectMgmts', component: UnderConstruction },
-      { path: 'regionMgmts', component: UnderConstruction }, // List page
-      { path: 'events', component: UnderConstruction },
-      { path: 'parkingLotMgmts', component: UnderConstruction },
-      { path: 'projects', component: UnderConstruction },
-      { path: 'acceptanceGrades', component: UnderConstruction },
-      { path: 'microOrganisms', component: UnderConstruction },
-      { path: 'scheduledMissions', component: UnderConstruction },
+      { path: 'vehicleMgmts', component: VehicleMgmtListPage },
+      { path: 'projects', component: ProjectListPage },
+      { path: 'events', component: EventListPage },
+      { path: 'parkingLotMgmts', component: ParkingLotMgmtListPage },
+      { path: 'mirStatuses', component: MirStatusListPage },
+      { path: 'missions', component: MissionListPage },
+      { path: 'missionQueues/current', component: MissionQueueListPage },
+      { path: 'missionQueues/history', component: MissionQueueListPage },
+      { path: 'maps', component: MapListPage },
+      { path: 'devices', component: DeviceListPage },
+      { path: 'hookStatuses', component: HookStatusListPage },
+      { path: 'dashboard', component: DashboardListPage },
+      { path: 'microOrganisms', component: MicroOrganismListPage },
+      { path: 'acceptanceGrades', component: AcceptanceGradeListPage },
+      { path: 'remoteManagementSystemStatuses', component: RemoteManagementSystemStatusListPage },
+      { path: 'missionBookings', component: MissionBookingListPage },
+
+      // Complex pages not yet fully ported or needing sub-components
+      { path: 'regionMgmts', component: UnderConstruction },
       { path: 'floorRegionMgmts/:id', component: RegionMgmtPage },
       { path: 'regionMgmts/:id', component: RegionMgmtPage },
-      { path: 'dashboard', component: UnderConstruction },
-      { path: 'devices', component: UnderConstruction },
-      { path: 'mirStatuses', component: UnderConstruction },
-      { path: 'missions', component: UnderConstruction },
-      { path: 'missionQueues/history', component: UnderConstruction },
-      { path: 'missionQueues/current', component: UnderConstruction },
-      { path: 'maps', component: UnderConstruction },
-      { path: 'hookStatuses', component: UnderConstruction },
-      { path: 'missionBookings', component: UnderConstruction },
+      { path: 'objectMgmts', component: UnderConstruction },
+      { path: 'scheduledMissions', component: UnderConstruction },
       { path: 'missionQueues/sample', component: UnderConstruction },
-      { path: 'remoteManagementSystemStatuses', component: UnderConstruction },
-      // Window routes (popups) - mapping to regular pages for now or UnderConstruction
-      { path: 'vehicleMgmts/window', component: UnderConstruction },
-      { path: 'parkingLotMgmts/window', component: UnderConstruction },
-      { path: 'cleanAreas/window', component: UnderConstruction },
-      { path: 'elevatorMgmts/window', component: UnderConstruction },
-      { path: 'mqttCommands/window', component: UnderConstruction },
+
+      // Window popups
+      { path: 'vehicleMgmts/window', component: VehicleMgmtListPage },
+      { path: 'parkingLotMgmts/window', component: ParkingLotMgmtListPage },
     ]
   },
   { path: '/:pathMatch(.*)*', redirect: '/' }
