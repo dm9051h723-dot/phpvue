@@ -1,6 +1,14 @@
 # Frontend Project (Vue 3)
 
-此資料夾包含重構後的 Vue 3 前端專案。
+此資料夾包含重構後的 Vue 3 前端專案，位於分支 `feature/frontend-separation`。
+
+## 使用技術
+
+*   **框架**: Vue 3 (Composition API)
+*   **建置工具**: Vite
+*   **狀態管理**: Pinia
+*   **路由**: Vue Router
+*   **UI 樣式**: Bootstrap 5 + AdminLTE 風格 (SASS)
 
 ## 專案結構
 
@@ -12,35 +20,36 @@
   - `stores/`: Pinia 狀態管理 (User, Device 等)
   - `assets/scss/`: 全域樣式 (Bootstrap, AdminLTE 風格)
 
-## 檔案說明
+## 如何取得與啟動
 
-- `src/main.js`: 應用程式入口，引入 Pinia, Router, Bootstrap 等。
-- `src/router/index.js`: 定義所有頁面路由，對應原專案的 `routes.js`。
-- `src/views/Common/CrudList.vue`: 通用的列表頁面模板，用於快速建置管理頁面。
-- `src/views/RegionMgmt/RegionMgmtPage.vue`: 汙染地圖/區域管理頁面 (包含地圖顯示與操作邏輯)。
-- `src/components/Common/SidebarView.vue`: 側邊選單，包含權限判斷與選單展開邏輯。
+如果你是第一次使用此分支，請按照以下步驟操作：
 
-## 啟動方式
+1. **拉取分支代碼**
+   ```bash
+   git fetch origin feature/frontend-separation
+   git checkout feature/frontend-separation
+   ```
 
-1. 進入此資料夾：
+2. **進入前端目錄**
    ```bash
    cd frontend-new
    ```
 
-2. 安裝依賴：
+3. **安裝依賴**
    ```bash
    npm install
    ```
 
-3. 啟動開發伺服器：
+4. **啟動開發伺服器**
    ```bash
    npm run dev
    ```
 
-4. 瀏覽器開啟 [http://localhost:3000](http://localhost:3000)
+5. **瀏覽器開啟**
+   前往 [http://localhost:3000](http://localhost:3000)
 
-## API 串接
+## API 串接說明
 
-目前 `vite.config.js` 已設定 Proxy 指向 `http://localhost:8081` (後端)。
-若要串接真實 API，請確保後端服務已啟動。
-目前的頁面大多使用 Mock Data (如 `RegionMgmtPage.vue` 中的 `onMounted`)，開發時可替換為 `axios.get('/api/...')`。
+目前 `vite.config.js` 已設定 Proxy 指向 `http://localhost:8081` (後端 Laravel 服務)。
+*   若要串接真實 API，請確保後端服務已啟動 (`php artisan serve --port=8081`)。
+*   目前的頁面範例 (如 `RegionMgmtPage.vue`) 暫時使用 Mock Data 方便前端開發，正式串接時可將 `regionMgmt.value = { ... }` 替換為 `axios.get('/api/...')`。
